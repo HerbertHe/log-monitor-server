@@ -1,0 +1,21 @@
+{
+  "name": "log-monitor-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "logm": "./bin/index.js"
+  },
+  "scripts": {
+    "start": "logm"
+  },
+  "repository": "https://github.com/HerbertHe/log-monitor-server.git",
+  "author": "HerbertHe <Herbert.He0229@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@herberthe/log-monitor": "^0.0.3",
+    "commander": "^7.2.0",
+    "koa": "^2.13.1",
+    "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0"
+  }
+}
