@@ -1,5 +1,5 @@
 {
-  "name": "log-monitor-server",
+  "name": "@herberthe/log-monitor-server",
   "version": "0.0.1",
   "main": "index.js",
   "bin": {
