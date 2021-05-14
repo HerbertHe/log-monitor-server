@@ -1,6 +1,6 @@
 {
   "name": "log-monitor-server",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "bin": {
     "logm": "./bin/index.js"
