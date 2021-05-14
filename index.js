@@ -3,8 +3,11 @@ const app = new Koa()
 
 const routers = require("./routers/index")
 const static = require("koa-static")
+const jwt = require("koa-jwt")
 
 app.use(static(__dirname + "/dist"))
+app.use(static(__dirname + "/public"))
+
 app.use(routers.routes())
 app.use(routers.allowedMethods())
 
