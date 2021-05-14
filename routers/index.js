@@ -1,9 +1,12 @@
 const Router = require("koa-router")
 
+const { regAPILogin } = require("./api/login")
+const { regMainRoutes } = require("./main")
+
 const routers = new Router()
 
-routers.get("/", async (ctx, next) => {
-    ctx.body = "Hello World"
-})
+// 注册路由
+regMainRoutes(routers)
+regAPILogin(routers)
 
 module.exports = routers

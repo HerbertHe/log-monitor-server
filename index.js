@@ -4,7 +4,7 @@ const app = new Koa()
 const routers = require("./routers/index")
 const static = require("koa-static")
 
-app.use(static(__dirname, "public"))
+app.use(static(__dirname + "/dist"))
 app.use(routers.routes())
 app.use(routers.allowedMethods())
 
