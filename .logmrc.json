@@ -1,5 +1,6 @@
 {
     "Port": 8080,
     "LogPath": "/var/log/nginx",
-    "Domain": ""
+    "Domain": "",
+    "Copyright": "Copyright 2021 惒泊 | Herbert He All Rights Reserved!"
 }

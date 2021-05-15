@@ -1,5 +1,7 @@
 # log-monitor-server
 
+<img src="./public/imgs/golk.png" width="100" />
+
 日志监控服务端
 
 ## Thanks

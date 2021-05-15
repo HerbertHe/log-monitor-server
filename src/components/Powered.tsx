@@ -24,13 +24,13 @@ const PoweredBy = [
 ]
 
 const Powered = () => (
-    <div className="w-full flex-col justify-center items-center px-5">
-        <h2>Powered By</h2>
-        <ul className="flex-row justify-center items-center">
+    <div className="flex w-full flex-col justify-center items-center px-5 mt-20">
+        <h2 className="font-bold">Powered By</h2>
+        <ul className="flex flex-row justify-center items-center">
             {PoweredBy.map((item) => (
                 <li
                     key={item.name}
-                    className="flex-col justify-center items-center w-auto"
+                    className="flex flex-col justify-center items-center w-auto m-5"
                 >
                     <img
                         src={item.logo}
@@ -38,7 +38,7 @@ const Powered = () => (
                         width="100"
                         height="100"
                     />
-                    <div className="w-24">{item.name}</div>
+                    <div className="mt-4">{item.name}</div>
                 </li>
             ))}
         </ul>
