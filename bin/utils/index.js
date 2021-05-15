@@ -11,7 +11,7 @@ const logErrorString = (raw) => {
  * 生成建议字符串信息
  */
 const logAdviceString = (raw) => {
-    return `${chalk.greenBright(raw)}`
+    return `${chalk.bgGrey("INFO:")} ${chalk.greenBright(raw)}`
 }
 
 module.exports = {
