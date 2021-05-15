@@ -16,8 +16,10 @@
   "author": "HerbertHe <Herbert.He0229@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@antv/g2plot": "^2.3.21",
     "@herberthe/log-monitor": "^0.0.3",
     "@tailwindcss/ui": "^0.7.2",
+    "antd": "^4.15.5",
     "chalk": "^4.1.1",
     "commander": "^7.2.0",
     "crypto-js": "^4.0.0",
