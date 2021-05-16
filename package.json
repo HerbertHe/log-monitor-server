@@ -7,6 +7,7 @@
   },
   "scripts": {
     "start": "logm run",
+    "build": "yarn vite:build",
     "server:dev": "cross-env NODE_ENV=development LOGM_PORT=8080 nodemon index.js",
     "vite:dev": "vite",
     "vite:build": "vite build",
