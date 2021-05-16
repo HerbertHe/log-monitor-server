@@ -1,6 +1,6 @@
 {
     "Port": 8080,
-    "LogPath": "/var/log/nginx",
+    "LogPath": "F:\\\\Projects\\\\log-monitor\\\\examples",
     "Domain": "",
     "Copyright": "Copyright 2021 惒泊 | Herbert He All Rights Reserved!"
 }

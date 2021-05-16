@@ -1,11 +1,11 @@
 // 处理返回logs数据
-const LogMonitor = require("@herberthe/log-monitor")
+const { LogMonitor } = require("@herberthe/log-monitor")
 const { readConfigFile } = require("../utils/utils")
 
 const getLogFromPath = () => {
-    const { Path } = readConfigFile()
+    const { LogPath } = readConfigFile()
     const monitor = new LogMonitor({
-        path: Path,
+        path: LogPath,
     })
     return monitor.export()
 }
