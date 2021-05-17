@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 import AdminAbout from "../components/admin/AdminAbout"
 import AdminIndex from "../components/admin/AdminIndex"
-import AdminLogs from "../components/admin/AdminLogs"
+import AdminNginxLogs from "../components/admin/AdminNginxLogs"
 
 const Links = [
     {
@@ -12,8 +12,8 @@ const Links = [
         name: "控制台",
     },
     {
-        to: "/admin/logs",
-        name: "日志数据",
+        to: "/admin/nginx-logs",
+        name: "NGINX日志数据",
     },
     {
         to: "/admin/about",
@@ -51,6 +51,12 @@ const Admin = (props: any) => {
                         <li
                             key={item.name}
                             className="px-4 hover:bg-gray-300 py-2 cursor-pointer"
+                            style={{
+                                backgroundColor:
+                                    domPage === item.to.split("/")[2]
+                                        ? "#d9d9d9"
+                                        : "",
+                            }}
                         >
                             <Link
                                 to={item.to}
@@ -66,7 +72,7 @@ const Admin = (props: any) => {
                 </ul>
                 <div className="h-full flex-1 ml-3 p-5 overflow-auto shadow-lg">
                     {domPage === "index" && <AdminIndex />}
-                    {domPage === "logs" && <AdminLogs />}
+                    {domPage === "nginx-logs" && <AdminNginxLogs />}
                     {domPage === "about" && <AdminAbout />}
                 </div>
             </main>
