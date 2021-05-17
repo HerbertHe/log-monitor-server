@@ -457,10 +457,10 @@
   dependencies:
     purgecss "^3.1.3"
 
-"@herberthe/log-monitor@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/@herberthe/log-monitor/-/log-monitor-0.0.3.tgz#1834159dda0d744a7d412d61f1b40192f375f758"
-  integrity sha512-YrPqDz6x3R+oLR8EW3wlWYah+kvMmF5Kxugvry7jLbGkhv7rq6qVaGtA20JEcPScQXbkzYZxkfSCq/7alqJlWQ==
+"@herberthe/log-monitor@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/@herberthe/log-monitor/-/log-monitor-0.0.6.tgz#805a407fcd251c724a1ada8131b504c161e4bbe3"
+  integrity sha512-wOyyugoLrf7RJGz7l7TjyNHat9U9m0i9YqO2nemU9ocu3KN94Lt+r0UXgv4Ft+xsADxO0f5xmw0+pw5KFnOa4A==
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
