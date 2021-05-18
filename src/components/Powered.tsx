@@ -10,21 +10,17 @@ const PoweredBy = [
         name: "React",
     },
     {
-        logo: "/imgs/tailwindcss.png",
-        name: "Tailwindcss",
+        logo: "/imgs/windi.svg",
+        name: "Windicss",
     },
     {
         logo: "/imgs/rollup.png",
         name: "Rollup",
     },
-    {
-        logo: "/imgs/postcss.png",
-        name: "Postcss",
-    },
 ]
 
 const Powered = () => (
-    <div className="flex w-full flex-col justify-center items-center px-5 mt-20">
+    <div className="flex w-full flex-col justify-center items-center px-5 mt-25">
         <h2 className="font-bold">Powered By</h2>
         <ul className="flex flex-row justify-center items-center">
             {PoweredBy.map((item) => (

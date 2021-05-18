@@ -15,6 +15,17 @@ interface IAccessLog {
 interface IErrorLog {
     key?: any
     raw: string
+    time: string
+    level: string
+    pid: string
+    number: string
+    message: string
+    client: string
+    server: string
+    request: string
+    upstream: string
+    host: string
+    referrer: string
 }
 
 interface ILogDetail {
@@ -23,6 +34,7 @@ interface ILogDetail {
     log?: IAccessLog | IErrorLog | undefined
 }
 
+// TODO 重构各部分的展示
 const LogDetail = ({ display, setDisplay, log }: ILogDetail) => {
     const [AccessLog, setAccessLog] = useState([{}])
     const [UA, setUA] = useState("")

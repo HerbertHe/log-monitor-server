@@ -90,7 +90,7 @@ const AdminNginxLogs = () => {
                 return {
                     key: index,
                     raw: item[0],
-                    time: item[1],
+                    time: item[1].substr(-8, 8),
                     level: item[2],
                     pid: item[3].split("#")[0],
                     number: item[4],
