@@ -450,10 +450,10 @@
   resolved "https://registry.npm.taobao.org/@ctrl/tinycolor/download/@ctrl/tinycolor-3.4.0.tgz#c3c5ae543c897caa9c2a68630bed355be5f9990f"
   integrity sha1-w8WuVDyJfKqcKmhjC+01W+X5mQ8=
 
-"@herberthe/log-monitor@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/@herberthe/log-monitor/-/log-monitor-0.0.6.tgz#805a407fcd251c724a1ada8131b504c161e4bbe3"
-  integrity sha512-wOyyugoLrf7RJGz7l7TjyNHat9U9m0i9YqO2nemU9ocu3KN94Lt+r0UXgv4Ft+xsADxO0f5xmw0+pw5KFnOa4A==
+"@herberthe/log-monitor@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/@herberthe/log-monitor/-/log-monitor-0.0.8.tgz#c78c1273fd90704566ed8e27cc81049e6b793bc5"
+  integrity sha512-HEzXLv5wEQpTSJhuQRWpl6+t3I/Ej0MT2VDtgjXicow5fmoz44g9IfIfFSS5889/mHIWKRT4Nmd9cybxuPfm4A==
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"

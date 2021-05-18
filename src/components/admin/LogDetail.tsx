@@ -6,8 +6,8 @@ interface IAccessLog {
     time: string
     request: string
     status: string
-    code: string
-    url: string
+    bytes: string
+    referrer: string
     ua: string
     raw: string
 }
@@ -30,15 +30,15 @@ const LogDetail = ({ display, setDisplay, log }: ILogDetail) => {
 
     useEffect(() => {
         if (!!log && !!log?.raw) {
-            const { ip, time, request, status, code, url, ua, raw } =
+            const { ip, time, request, status, bytes, referrer, ua, raw } =
                 log as IAccessLog
             const detail = [
                 { id: "IP", value: ip },
                 { id: "时间", value: time },
                 { id: "请求", value: request },
                 { id: "状态", value: status },
-                { id: "code", value: code },
-                { id: "URL", value: url },
+                { id: "Bytes", value: bytes },
+                { id: "Referrer", value: referrer },
             ]
             setAccessLog(detail)
             setRaw(raw)

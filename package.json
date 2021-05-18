@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "@antv/g2plot": "^2.3.21",
-    "@herberthe/log-monitor": "^0.0.6",
+    "@herberthe/log-monitor": "^0.0.8",
     "@tailwindcss/ui": "^0.7.2",
     "antd": "^4.15.5",
     "chalk": "^4.1.1",

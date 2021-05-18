@@ -18,7 +18,7 @@ const AdminNginxLogs = () => {
             const { data } = result
             if (data.length !== 0) {
                 setFiles(data)
-                const datas = transContent(data[0])
+                const datas = transAccessLog(data[0])
                 setDataSrc(datas)
             }
             const cols = transCols(data[0])
@@ -63,7 +63,7 @@ const AdminNginxLogs = () => {
         return cols
     }
 
-    const transContent = (data: any) => {
+    const transAccessLog = (data: any) => {
         setLogType(data.type)
         const datas = data.logs.content
             .filter((item: any) => !!item)
@@ -75,9 +75,32 @@ const AdminNginxLogs = () => {
                     time: item[2].substr(-14, 8),
                     request: item[3],
                     status: item[4],
-                    code: item[5],
-                    url: item[6],
+                    bytes: item[5],
+                    referrer: item[6],
                     ua: item[7],
+                }
+            })
+        return datas
+    }
+    const transErrorLog = (data: any) => {
+        setLogType(data.type)
+        const datas = data.logs.content
+            .filter((item: any) => !!item)
+            .map((item: any, index: number) => {
+                return {
+                    key: index,
+                    raw: item[0],
+                    time: item[1],
+                    level: item[2],
+                    pid: item[3].split("#")[0],
+                    number: item[4],
+                    message: item[5],
+                    client: item[6].split(":")[1],
+                    server: item[7].split(":")[1],
+                    request: item[8].split(":")[1],
+                    upstream: item[9],
+                    host: item[10].split(":")[1],
+                    referrer: item[11].split(":")[1],
                 }
             })
         return datas
@@ -88,7 +111,11 @@ const AdminNginxLogs = () => {
             (item: any) => item.from === e.target.value
         )[0] as any
         setCol(transCols(data))
-        setDataSrc(transContent(data))
+        if (data.type === "access") {
+            setDataSrc(transAccessLog(data))
+        } else {
+            setDataSrc(transErrorLog(data))
+        }
     }
 
     const openDetail = (text: any) => {
