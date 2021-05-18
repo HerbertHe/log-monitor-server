@@ -6,6 +6,6 @@
 
 ## Thanks
 
-|                      Vite                       |                     React                      |                      Rollup                       |                      Tailwindcss                       |                      Postcss                       |
-| :---------------------------------------------: | :--------------------------------------------: | :-----------------------------------------------: | :----------------------------------------------------: | :------------------------------------------------: |
-| <img src="./public/imgs/vite.svg" width="40" /> | <img src="./public/imgs/react.svg" width="40"> | <img src="./public/imgs/rollup.png" width="40" /> | <img src="./public/imgs/tailwindcss.png" width="40" /> | <img src="./public/imgs/postcss.png" width="40" /> |
+|                      Vite                       |                     React                      |                      Rollup                       |                     Windicss                     |
+| :---------------------------------------------: | :--------------------------------------------: | :-----------------------------------------------: | :----------------------------------------------: |
+| <img src="./public/imgs/vite.svg" width="40" /> | <img src="./public/imgs/react.svg" width="40"> | <img src="./public/imgs/rollup.png" width="40" /> | <img src="./public/imgs/windi.svg" width="40" /> |
