@@ -1,9 +1,10 @@
 import { defineConfig } from "vite"
+import Windicss from "vite-plugin-windicss"
 import reactRefresh from "@vitejs/plugin-react-refresh"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [reactRefresh()],
+    plugins: [reactRefresh(), Windicss()],
     server: {
         proxy: {
             "^/api/.*": {
