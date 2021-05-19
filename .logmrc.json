@@ -1,6 +1,15 @@
 {
     "Port": 8080,
-    "LogPath": "F:\\\\Projects\\\\log-monitor\\\\examples",
+    "LogPath": [
+        [
+            "F:\\\\Projects\\\\log-monitor\\\\examples",
+            "nginx"
+        ],
+        [
+            "F:\\\\Projects\\\\log-monitor",
+            "apache"
+        ]
+    ],
     "Domain": "",
     "Copyright": "Copyright 2021 惒泊 | Herbert He All Rights Reserved!"
 }

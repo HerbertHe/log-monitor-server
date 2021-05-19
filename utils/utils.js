@@ -2,22 +2,50 @@ const fs = require("fs")
 const path = require("path")
 
 /**
+ * 深合并
+ */
+const deepMerge = (preObj, newObj) => {
+    let _obj = {}
+    for (let item in preObj) {
+        if (
+            typeof preObj[item] === "object" &&
+            !(preObj[item] instanceof Array)
+        ) {
+            _obj[item] = deepMerge(preObj[item], newObj[item])
+            continue
+        } else if (!!newObj[item]) {
+            _obj[item] = newObj[item]
+            continue
+        } else {
+            _obj[item] = preObj[item]
+            continue
+        }
+    }
+    return _obj
+}
+
+/**
  * 读取配置文件信息
  */
 const readConfigFile = () => {
     const cwd = process.cwd()
     const files = fs.readdirSync(cwd)
-    let config = null
+    const defaultConfig = JSON.parse(
+        fs.readFileSync(path.resolve(__dirname, "../.logmrc.json"), {
+            encoding: "utf-8",
+        })
+    )
+
     if (files.includes(".logmrc.json")) {
-        config = fs.readFileSync(path.resolve(cwd, ".logmrc.json"), {
-            encoding: "utf-8",
-        })
-    } else {
-        config = fs.readFileSync(path.resolve(__dirname, "../.logmrc.json"), {
-            encoding: "utf-8",
-        })
+        const newConfig = JSON.parse(
+            fs.readFileSync(path.resolve(cwd, ".logmrc.json"), {
+                encoding: "utf-8",
+            })
+        )
+        return deepMerge(defaultConfig, newConfig)
     }
-    return JSON.parse(config)
+
+    return defaultConfig
 }
 
 /**
