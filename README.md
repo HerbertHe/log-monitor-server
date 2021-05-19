@@ -1,8 +1,49 @@
-# log-monitor-server
+# log-monitor-server(WIP)
 
 <img src="./public/imgs/golk.png" width="100" />
 
 日志监控服务端
+
+## Usage
+
+- Download from NPM
+
+```bash
+npm i @herberthe/log-monitor-server -g
+```
+
+- Configure
+- Start service
+
+```bash
+logm run
+```
+
+## Development
+
+- Clone
+
+```bash
+git clone https://github.com/HerbertHe/log-monitor-server.git
+```
+
+- Download dependencies
+
+```bash
+yarn
+```
+
+- Start server
+
+```bash
+yarn server:dev
+```
+
+- Start frontend
+
+```bash
+yarn vite:dev
+```
 
 ## Thanks
 

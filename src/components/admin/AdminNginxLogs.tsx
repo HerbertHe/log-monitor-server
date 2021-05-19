@@ -28,7 +28,7 @@ const AdminNginxLogs = () => {
 
     const transCols = (data: any) => {
         const cols = data.logs.labels.map((item: string) => {
-            if (item === "ua") {
+            if (["ua", "message", "request"].includes(item)) {
                 return {
                     title: item.toUpperCase(),
                     dataIndex: item,
@@ -63,6 +63,16 @@ const AdminNginxLogs = () => {
         return cols
     }
 
+    const getErrorShort = (text: string) => {
+        const regex = /[a-z]+:\s*([\s\S]+)/
+        const res = regex.exec(text)
+        if (!!res) {
+            return res[1]
+        } else {
+            return text
+        }
+    }
+
     const transAccessLog = (data: any) => {
         setLogType(data.type)
         const datas = data.logs.content
@@ -95,12 +105,12 @@ const AdminNginxLogs = () => {
                     pid: item[3].split("#")[0],
                     number: item[4],
                     message: item[5],
-                    client: item[6].split(":")[1],
-                    server: item[7].split(":")[1],
-                    request: item[8].split(":")[1],
-                    upstream: item[9],
-                    host: item[10].split(":")[1],
-                    referrer: item[11].split(":")[1],
+                    client: getErrorShort(item[6]),
+                    server: getErrorShort(item[7]),
+                    request: getErrorShort(item[8]),
+                    upstream: getErrorShort(item[9]),
+                    host: getErrorShort(item[10]),
+                    referrer: getErrorShort(item[11]),
                 }
             })
         return datas
