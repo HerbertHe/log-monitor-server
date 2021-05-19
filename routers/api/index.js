@@ -22,6 +22,12 @@ const regAPIIndex = (routers) => {
             }
         }
     })
+    routers.get("/api/config", async (ctx, next) => {
+        const data = readConfigFile()
+        ctx.body = {
+            data,
+        }
+    })
 }
 
 module.exports = {

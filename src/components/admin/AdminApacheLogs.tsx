@@ -16,7 +16,6 @@ const AdminApacheLogs = () => {
             const res = await fetch("/api/logs/apache")
             const result = await res.json()
             const { data } = result
-            console.log(data)
             if (data.length !== 0) {
                 setFiles(data)
                 setLogType(data[0].type)
@@ -68,16 +67,6 @@ const AdminApacheLogs = () => {
             ),
         })
         return cols
-    }
-
-    const getErrorShort = (text: string) => {
-        const regex = /[a-z]+:\s*([\s\S]+)/
-        const res = regex.exec(text)
-        if (!!res) {
-            return res[1]
-        } else {
-            return text
-        }
     }
 
     const transAccessLog = (data: any) => {

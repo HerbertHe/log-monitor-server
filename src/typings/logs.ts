@@ -32,4 +32,8 @@ export interface IApacheErrorLog {
     [inex: string]: any
     key?: any
     raw: string
+    time: string
+    level: string
+    client: string
+    message: string
 }
