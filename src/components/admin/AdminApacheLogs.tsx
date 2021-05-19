@@ -3,7 +3,7 @@ import { Table } from "antd"
 
 import LogDetail from "./LogDetail"
 
-const AdminNginxLogs = () => {
+const AdminApacheLogs = () => {
     const [showDetail, setShowDetail] = useState(false)
     const [detail, setDetail] = useState(undefined)
     const [col, setCol] = useState([])
@@ -13,9 +13,10 @@ const AdminNginxLogs = () => {
 
     useEffect(() => {
         ;(async () => {
-            const res = await fetch("/api/logs/nginx")
+            const res = await fetch("/api/logs/apache")
             const result = await res.json()
             const { data } = result
+            console.log(data)
             if (data.length !== 0) {
                 setFiles(data)
                 setLogType(data[0].type)
@@ -106,17 +107,10 @@ const AdminNginxLogs = () => {
                 return {
                     key: index,
                     raw: item[0],
-                    time: item[1].substr(-8, 8),
+                    time: item[1],
                     level: item[2],
-                    pid: item[3].split("#")[0],
-                    number: item[4],
-                    message: item[5],
-                    client: getErrorShort(item[6]),
-                    server: getErrorShort(item[7]),
-                    request: getErrorShort(item[8]),
-                    upstream: getErrorShort(item[9]),
-                    host: getErrorShort(item[10]),
-                    referrer: getErrorShort(item[11]),
+                    client: item[3],
+                    message: item[4],
                 }
             })
         return datas
@@ -188,4 +182,4 @@ const AdminNginxLogs = () => {
     )
 }
 
-export default AdminNginxLogs
+export default AdminApacheLogs

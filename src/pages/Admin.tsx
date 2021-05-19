@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import AdminAbout from "../components/admin/AdminAbout"
 import AdminIndex from "../components/admin/AdminIndex"
 import AdminNginxLogs from "../components/admin/AdminNginxLogs"
+import AdminApacheLogs from "../components/admin/AdminApacheLogs"
 
 const Links = [
     {
@@ -13,7 +14,11 @@ const Links = [
     },
     {
         to: "/admin/nginx-logs",
-        name: "NGINX日志数据",
+        name: "Nginx日志",
+    },
+    {
+        to: "/admin/apache-logs",
+        name: "Apache日志",
     },
     {
         to: "/admin/about",
@@ -73,6 +78,7 @@ const Admin = (props: any) => {
                 <div className="h-full flex-1 ml-3 p-5 overflow-auto shadow-lg">
                     {domPage === "index" && <AdminIndex />}
                     {domPage === "nginx-logs" && <AdminNginxLogs />}
+                    {domPage === "apache-logs" && <AdminApacheLogs />}
                     {domPage === "about" && <AdminAbout />}
                 </div>
             </main>

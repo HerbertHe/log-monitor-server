@@ -1,42 +1,12 @@
 import React, { Fragment, useEffect, useState } from "react"
-
-interface IAccessLog {
-    [index: string]: any
-    key?: any
-    ip: string
-    time: string
-    request: string
-    status: string
-    bytes: string
-    referrer: string
-    ua: string
-    raw: string
-}
-
-interface IErrorLog {
-    [index: string]: any
-    key?: any
-    raw: string
-    time: string
-    level: string
-    pid: string
-    number: string
-    message: string
-    client: string
-    server: string
-    request: string
-    upstream: string
-    host: string
-    referrer: string
-}
+import { IAccessLog, IApacheErrorLog, INginxErrorLog } from "../../typings/logs"
 
 interface ILogDetail {
     display: boolean
     setDisplay: () => void
-    log?: IAccessLog | IErrorLog | undefined
+    log?: IAccessLog | INginxErrorLog | IApacheErrorLog | undefined
 }
 
-// TODO 重构各部分的展示
 const LogDetail = ({ display, setDisplay, log }: ILogDetail) => {
     const [AccessLog, setAccessLog] = useState<Array<Array<string>>>([])
 

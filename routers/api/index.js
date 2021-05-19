@@ -8,9 +8,18 @@ const regAPIIndex = (routers) => {
             copy: Copyright,
         }
     })
-    routers.get("/api/logs", async (ctx, next) => {
-        ctx.body = {
-            data: getLogFromPath()
+    routers.get("/api/logs/:mode", async (ctx, next) => {
+        const { mode } = ctx.params
+        if (!mode) {
+            ctx.status = 404
+        } else if (mode === "nginx") {
+            ctx.body = {
+                data: getLogFromPath(mode),
+            }
+        } else if (mode === "apache") {
+            ctx.body = {
+                data: getLogFromPath(mode),
+            }
         }
     })
 }
